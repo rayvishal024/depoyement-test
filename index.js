@@ -5,7 +5,15 @@ const app = express();
 const PORT = process.env.PORT ?? 8000;
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Hello from Express!' });
+    res.json({ message: 'Hello from Production!' });
+});
+
+app.get('/health', (req, res) => {
+     res.json({
+          status: 'OK',
+          uptime: process.uptime(),
+          timestamp: new Date().toISOString()
+     });
 });
 
 app.listen(PORT, () => {
