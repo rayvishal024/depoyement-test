@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -name: Checkout code
-       uses: actions/checkout@v4
+      uses: actions/checkout@v4
 
-       -name: deploye on exclaude
-       uses: appleboy/ssh-action@v1.0.3
-       with:
+      -name: deploye on exclaude
+      uses: appleboy/ssh-action@v1.0.3
+      with:
          host: 210.79.129.156
          username: ubuntu
          key: ${{ secrets.SSH_KEY }}
