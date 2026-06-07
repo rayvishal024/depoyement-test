@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT ?? 8000;
 
 app.get('/', (req, res) => {
-    res.json({ message: 'Hello from Production!' });
+    res.json({ message: 'Hello from Production! with ci-cd' });
 });
 
 app.get('/health', (req, res) => {
