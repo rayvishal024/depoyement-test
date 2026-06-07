@@ -8,16 +8,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      -name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      -name: deploye on exclaude
-      uses: appleboy/ssh-action@v1.0.3
-      with:
-         host: 210.79.129.156
-         username: ubuntu
-         key: ${{ secrets.SSH_KEY }}
-         script: |
+      - name: deploye on exclaude
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 210.79.129.156
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+          script: |
            cd /home/ubuntu/depoyement-test
            git pull origin main
            npm install
